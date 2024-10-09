@@ -1,0 +1,195 @@
+.mcq {
+
+  // Class to show the selection icons until the component is complete
+  // --------------------------------------------------
+  &__widget:not(.is-complete) &-item__answer-icon {
+    display: block;
+  }
+
+  // Class to show the users selection
+  // --------------------------------------------------
+  &__widget.show-user-answer .is-correct .is-selected &-item__correct-icon,
+  &__widget.show-user-answer .is-incorrect .is-selected &-item__incorrect-icon {
+    display: block;
+  }
+
+  &__widget.show-user-answer &-item:not(.is-correct):not(.is-incorrect) .is-selected &-item__answer-icon {
+    display: block;
+  }
+
+  // Class to show the correct answers
+  // --------------------------------------------------
+  &__widget.show-correct-answer .is-correct .is-selected &-item__correct-icon,
+  &__widget.show-correct-answer .is-incorrect .is-selected &-item__correct-icon {
+    display: block;
+  }
+
+  &__widget.show-correct-answer &-item:not(.is-correct):not(.is-incorrect) .is-selected &-item__answer-icon {
+    display: block;
+  }
+
+
+  // Always show selection
+  // --------------------------------------------------
+  &__widget.show-correctness &-item__answer-icon {
+    display: block;
+  }
+
+  // Class to show the item correctness
+  // --------------------------------------------------
+  &__widget.show-correctness .is-correct &-item__correct-icon,
+  &__widget.show-correctness .is-incorrect &-item__incorrect-icon {
+    display: block;
+  }
+}
+
+.show-correct-answer .is-incorrect  {
+  .mcq-item {
+    &__label {
+      background: linear-gradient(180deg, #FFF 0%, #FFC9C9 100%);
+      border: 3px solid #F41616;
+    }
+    &__text-inner {
+      color: #F41616  !important;
+    } 
+  
+  }
+}
+
+.show-correct-answer .is-incorrect span.icon-1 {
+  border: 3px  solid #F37B6B !important;
+  background: #F41616 !important;
+}
+
+.show-correct-answer .is-correct span.icon-1 {
+  border: 3px  solid #A6DA7E !important;
+  background: #387F00 !important;
+}
+
+
+
+.show-correct-answer .is-correct   {
+  .mcq-item {
+    &__label {
+      background: linear-gradient(180deg, #FFF 0%, #E4FFA9 100%);
+      border: 3px solid #387F00;
+
+      &.is-selected .mcq-item__text_inner {
+        color: #387F00
+      }
+    }
+
+    &__text-inner {
+      color: #377B00  !important;
+    } 
+
+    span.icon-1 {
+      border: 3px  solid #A6DA7E;
+      background: #387F00;
+    }
+  }
+}
+
+.mcq-item {
+  position: relative;
+  font-family: "Lexend";
+
+  &__input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    z-index: -1;
+    .transform(translate(-50%, -50%));
+  }
+
+  &__label {
+    display: block;
+    z-index: 1;
+    margin-top: 5px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__label:not(.is-disabled) {
+    cursor: pointer;
+  }
+
+  .mcq-item__icon {
+    display: none
+  }
+
+ 
+  &__text {
+    display: block;
+  }
+
+  // MCQ item icons
+  // --------------------------------------------------
+  &__answer-icon.is-radio .icon {
+    .icon-radio-unchecked;
+  }
+
+  &__answer-icon.is-checkbox .icon {
+    .icon-checkbox-unchecked;
+  }
+
+  &__label.is-selected &__answer-icon.is-radio .icon {
+    .icon-radio-checked;
+  }
+
+  &__label.is-selected &__answer-icon.is-checkbox .icon {
+    .icon-checkbox-checked;
+  }
+
+  &__correct-icon .icon {
+    .icon-tick;
+  }
+
+  &__incorrect-icon .icon {
+    .icon-cross;
+  }
+
+  &__label {
+    border-radius: 10px !important;
+    background: linear-gradient(180deg, #FFF 0%, #F5F5F5 100%);
+    border: 3px solid transparent;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), -10px -10px 63px 0px rgba(202, 213, 226, 0.32) inset;
+
+  }
+
+  &__label.is-selected {
+    background: linear-gradient(180deg, #FFF 0%, #CDE5F6 100%);
+    border: 3px solid #005FAE;
+  } 
+
+  &__text-inner {
+    color: #444;
+  }
+
+  &.is-selected .mcq-item__text_inner {
+    color: #005FAD
+  }
+
+  span.icon-1 {
+    width: 20px;
+    height: 20px;
+    border: 3px  solid #CECECE;
+    background: transparent;
+    border-radius: 50%;
+    display: block;
+    margin-right: 10px;
+  }
+
+  .is-selected {
+    span.icon-1 {
+      border: 3px  solid #85D3F5;
+      background: #2576B9;
+    }
+  }
+
+  
+
+
+}

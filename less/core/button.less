@@ -52,4 +52,29 @@
   .can-show-marking &__feedback.is-full-width {
     margin-inline-end: @icon-size + (@item-margin * 2) + ((@item-padding * 0.75) * 2);
   }
+
+  &__action {
+    background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(180deg, #2562BF 0%, #40A6F0 100%);
+    color: white;
+    border-radius: 15px;
+    background-blend-mode: overlay, normal;
+    transition: all 0.5 ease-in-out;
+    color: white !important;
+    font-family: "Lexend";
+    &:hover {
+      background:  linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #2562BF 0%, #3d6079 100%)
+    }
+  }
+
+  &__marking {
+    &.is-correct {
+      background-color: #55b00d;
+      outline: 3px solid white;
+    } 
+
+    &.is-incorrect {
+      background-color: #aa1a1a;
+      outline: 3px solid white;
+    } 
+  }
 }
